@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 3.41873
+height = 24.2165
+
+[node name="Missile" type="RigidBody2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -3.0
+margin_top = -14.0
+margin_right = 3.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MissileShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
