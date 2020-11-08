@@ -8,15 +8,31 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "HealthManager",
+"language": "GDScript",
+"path": "res://src/PlayerHealth.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Missile",
+"language": "GDScript",
+"path": "res://src/Missile.gd"
+} ]
 _global_script_class_icons={
-
+"HealthManager": "",
+"Missile": ""
 }
 
 [application]
 
 config/name="project_final"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=480
+window/size/height=720
 
 [input]
 

@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Missile.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.41873
 height = 24.2165
 
-[node name="Missile" type="RigidBody2D"]
+[node name="Missile" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -3.0
