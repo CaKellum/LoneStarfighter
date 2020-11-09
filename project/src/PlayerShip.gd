@@ -2,18 +2,18 @@ extends KinematicBody2D
 
 signal game_over
 
-const RIGHT_MUZZEL = Vector2(15,13)
-const LEFT_MUZZEL = Vector2(-15,13)
+const MISSILE := preload("res://src/PlayerMissile.tscn")
+const HEALTHMANAGER := preload("res://src/PlayerHealth.gd")
 
 var _velocity := Vector2.ZERO
 var amt_fired_missiles := 0
+var is_fatigued := false
 
 export var _speed := 100
 
-onready var player_health := HealthManager.new(3)
-
 func _ready()->void:
 	$SpaceshipLook.play("safe_ship")
+	print(self.get_instance_id())
 
 
 func _get_input()->void:
@@ -25,31 +25,35 @@ func _get_input()->void:
 	
 	_velocity = velocity.normalized() * _speed
 	position.x = clamp(position.x, 0, 480)
+	position.y = clamp(position.y, 620,630)
 	
-	if Input.is_action_pressed("fire"):
+	if Input.is_action_pressed("fire") and not is_fatigued:
 		_fire_missle()
+		$CannonCoolDown.start()
+		is_fatigued = true
 
 
-func _fire_missle():
-	var muzzel := Vector2()
-	var shot := Missile.new()
+func _fire_missle()->void:
+	var shot := MISSILE.instance()
+	get_parent().add_child(shot)
 	amt_fired_missiles +=1
 	if amt_fired_missiles%2 == 0:
-		muzzel = RIGHT_MUZZEL
+		shot.fired($RightMuzzle.global_position)
 	else:
-		muzzel = LEFT_MUZZEL
-	shot.fired(muzzel)
+		shot.fired($LeftMuzzle.global_position)
 
 
 func hit()->void:
 	$SpaceshipLook.play("exploded")
-	self.queue_free()
-	if !player_health.has_lives():
+	if !$SpaceshipLook.is_playing():
 		emit_signal("game_over")
-	else:
-		player_health.loose_life()
+		queue_free()
 
 
 func _physics_process(_delta:float)->void:
 	_get_input()
 	_velocity = move_and_slide(_velocity)
+
+
+func _on_CannonCoolDown_timeout()->void:
+	is_fatigued = false

@@ -1,4 +1,3 @@
-class_name HealthManager
 extends Node2D
 
 var lives := 0

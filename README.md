@@ -38,6 +38,6 @@ A Game inspired by the Galaxian Arcade Series
 - <!--:star:!--> The game is released publicly on itch.io, with all the recommended accompanying text, screenshots, gameplay videos, etc.
 
 ## Third Party Assets
-enemy ship sprites done by (Master484)[https://m484games.ucoz.com/] licensed under (CCO 1.0)[https://creativecommons.org/publicdomain/zero/1.0/]\
+enemy ship sprites done by (clayster2012)[https://opengameart.org/users/clayster2012] licensed under (OGA-BY 3.0)[https://static.opengameart.org/OGA-BY-3.0.txt]
 player ship sprites done by (clayster2012)[https://opengameart.org/users/clayster2012] licensed under (CC-BY 3.0)[https://creativecommons.org/licenses/by/3.0/]
 backgrounds are by (Rawdanitsu)[https://opengameart.org/users/rawdanitsu] licensed under (CC0)[https://creativecommons.org/publicdomain/zero/1.0/]

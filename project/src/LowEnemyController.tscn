@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/EnemyLow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/LowEnemyController.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[node name="LowEnemyController" type="Node2D"]
+position = Vector2( 7.93701, 0 )
+
+[node name="Path" type="Path2D" parent="."]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Enemy_low" parent="Path" instance=ExtResource( 1 )]
+position = Vector2( 77.7015, 589.836 )
+rotation = -1.75065

@@ -1,0 +1,3 @@
+[gd_scene format=2]
+
+[node name="Enemey_Medium" type="Node2D"]

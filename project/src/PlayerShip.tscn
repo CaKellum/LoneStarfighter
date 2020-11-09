@@ -6,62 +6,59 @@
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 196, 0, 98, 80 )
+atlas = ExtResource( 1 )
+region = Rect2( 93, 0, 31, 44 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 93, 0, 31, 44 )
+region = Rect2( 124, 0, 31, 44 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 124, 0, 31, 44 )
+region = Rect2( 160, 0, 32, 44 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 0, 32, 44 )
+region = Rect2( 192, 0, 32, 44 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 192, 0, 32, 44 )
+region = Rect2( 232, 0, 29, 44 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 232, 0, 29, 44 )
+region = Rect2( 261, 0, 29, 44 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 261, 0, 29, 44 )
+region = Rect2( 290, 0, 29, 44 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 290, 0, 29, 44 )
+atlas = ExtResource( 2 )
+region = Rect2( 196, 0, 98, 80 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": false,
-"name": "safe_ship",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
 "name": "exploded",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
+"loop": false,
+"name": "safe_ship",
 "speed": 5.0
 } ]
 
 [node name="PlayerShip" type="KinematicBody2D"]
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="SpaceshipLook" type="AnimatedSprite" parent="."]
 position = Vector2( 0.471931, 0 )
@@ -71,3 +68,14 @@ animation = "safe_ship"
 [node name="ShipHull" type="CollisionPolygon2D" parent="."]
 position = Vector2( 0, -0.280617 )
 polygon = PoolVector2Array( -7.25983, -25.546, -3.61183, -3.37737, -13.1528, 3.07678, -15.6783, -11.7958, -17.6426, 3.91863, -29.4285, 11.4952, -30.8315, 4.47986, -33.925, 1.94547, -38.4081, 5.32171, -38.1275, 25.526, -30.5509, 25.2454, -29.7091, 21.0362, -6.97922, 17.3882, -5.57614, 33.9445, 12.1026, 33.6639, 11.2608, 17.6688, 32.5876, 20.4749, 33.71, 26.0872, 41.5673, 25.8066, 41.2867, 4.19925, 37.6386, 1.67371, 33.4294, 4.76048, 34.2713, 12.0565, 21.0823, 3.63802, 20.8017, -11.7958, 17.4343, 2.51556, 9.5771, -2.81614, 12.3833, -24.1429, 12.3833, -31.1583, 9.01587, -35.9288, 2.56171, -37.8931, -2.20876, -36.49, -7.25983, -30.8777 )
+
+[node name="CannonCoolDown" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="LeftMuzzle" type="Position2D" parent="."]
+position = Vector2( -15.995, -13.5 )
+
+[node name="RightMuzzle" type="Position2D" parent="."]
+position = Vector2( 20.485, -13.5 )
+[connection signal="timeout" from="CannonCoolDown" to="." method="_on_CannonCoolDown_timeout"]
