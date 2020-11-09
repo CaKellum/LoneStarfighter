@@ -5,7 +5,7 @@ A and D to move left and right<br>
 W, Up arrow key, or space to fire<br>
 enemies will regenerate after being eliminated<br>
 
-play it (here)[https://bsu-cs315.github.io/FP-LoneStarfighter/]<br>
+play it (here)[https://bsu-cs315.github.io/FP-LoneStarfighter/] <br>
 ## Self Reflection
 ### Project Report
 I use the second collision bit layers for the missiles so they don't collide with the player's ship, but the they do with the enemy. The enemies use the first two collision bits to allow collision with the player and missiles from the player. This means that I will either have to rig away programmatically differentiate the enemy missile's collision bits or just create a different system for the enemies.
