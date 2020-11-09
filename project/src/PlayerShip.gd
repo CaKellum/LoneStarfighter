@@ -13,7 +13,6 @@ export var _speed := 100
 
 func _ready()->void:
 	$SpaceshipLook.play("safe_ship")
-	print(self.get_instance_id())
 
 
 func _get_input()->void:

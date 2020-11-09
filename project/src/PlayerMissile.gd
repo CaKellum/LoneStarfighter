@@ -12,7 +12,6 @@ func fired(pos:Vector2)->void:
 func _physics_process(_delta:float)->void:
 	var collision := move_and_collide(_velocity)
 	if collision:
-		print(collision.collider)
 		if collision.collider.has_method("hit"):
 			collision.collider.hit()
 			self.queue_free()

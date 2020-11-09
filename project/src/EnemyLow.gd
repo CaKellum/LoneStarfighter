@@ -6,7 +6,7 @@ var direction := 1
 
 onready var start_pos := position
 
-func _process(delta:float)->void:
+func _process(_delta:float)->void:
 	position.x +=2*direction
 	if position.x>start_pos.x+20:
 		direction = -1
