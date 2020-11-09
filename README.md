@@ -5,7 +5,7 @@ A and D to move left and right<br>
 W, Up arrow key, or space to fire<br>
 enemies will regenerate after being eliminated<br>
 
-play it (here)[https://bsu-cs315.github.io/FP-LoneStarfighter/] <br>
+play it [here](https://bsu-cs315.github.io/FP-LoneStarfighter/) <br>
 ## Self Reflection
 ### Project Report
 I use the second collision bit layers for the missiles so they don't collide with the player's ship, but the they do with the enemy. The enemies use the first two collision bits to allow collision with the player and missiles from the player. This means that I will either have to rig away programmatically differentiate the enemy missile's collision bits or just create a different system for the enemies.
@@ -47,6 +47,6 @@ This iteration has been a bit of a struggle for me mostly due to personal life u
 - <!--:star:!--> The game is released publicly on itch.io, with all the recommended accompanying text, screenshots, gameplay videos, etc.
 
 ## Third Party Assets
-enemy ship sprites done by (clayster2012)[https://opengameart.org/users/clayster2012] licensed under (OGA-BY 3.0)[https://static.opengameart.org/OGA-BY-3.0.txt]
-player ship sprites done by (clayster2012)[https://opengameart.org/users/clayster2012] licensed under (CC-BY 3.0)[https://creativecommons.org/licenses/by/3.0/]
-backgrounds are by (Rawdanitsu)[https://opengameart.org/users/rawdanitsu] licensed under (CC0)[https://creativecommons.org/publicdomain/zero/1.0/]
+enemy ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [OGA-BY 3.0](https://static.opengameart.org/OGA-BY-3.0.txt)
+player ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+backgrounds are by [Rawdanitsu](https://opengameart.org/users/rawdanitsu) licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
