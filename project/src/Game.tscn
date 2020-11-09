@@ -8,7 +8,6 @@
 [ext_resource path="res://src/Game.gd" type="Script" id=6]
 
 [node name="Game" type="Node2D"]
-position = Vector2( 8.00903, -21.3575 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
@@ -31,28 +30,45 @@ position = Vector2( 240.416, 625.082 )
 [node name="EnemyArea" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
-[node name="Low EnemyArea" type="Node" parent="EnemyArea"]
+[node name="LowEnemyArea" type="Node" parent="EnemyArea"]
 script = ExtResource( 4 )
 
-[node name="Enemy_low5" parent="EnemyArea/Low EnemyArea" instance=ExtResource( 3 )]
+[node name="Enemy_low5" parent="EnemyArea/LowEnemyArea" instance=ExtResource( 3 )]
 position = Vector2( 50, 100 )
 
-[node name="Enemy_low" parent="EnemyArea/Low EnemyArea" instance=ExtResource( 3 )]
-position = Vector2( 413.8, 101.448 )
+[node name="Enemy_low" parent="EnemyArea/LowEnemyArea" instance=ExtResource( 3 )]
+position = Vector2( 410, 100 )
 
-[node name="Enemy_low2" parent="EnemyArea/Low EnemyArea" instance=ExtResource( 3 )]
-position = Vector2( 317.692, 98.7781 )
+[node name="Enemy_low2" parent="EnemyArea/LowEnemyArea" instance=ExtResource( 3 )]
+position = Vector2( 320, 100 )
 
-[node name="Enemy_low3" parent="EnemyArea/Low EnemyArea" instance=ExtResource( 3 )]
-position = Vector2( 229.592, 101.448 )
+[node name="Enemy_low3" parent="EnemyArea/LowEnemyArea" instance=ExtResource( 3 )]
+position = Vector2( 230, 100 )
 
-[node name="Enemy_low4" parent="EnemyArea/Low EnemyArea" instance=ExtResource( 3 )]
-position = Vector2( 141.493, 101.448 )
+[node name="Enemy_low4" parent="EnemyArea/LowEnemyArea" instance=ExtResource( 3 )]
+position = Vector2( 140, 100 )
+
+[node name="RepopulateDelay" type="Timer" parent="."]
+one_shot = true
+
+[node name="RepopWarning" type="Label" parent="."]
+visible = false
+margin_left = 173.225
+margin_top = 396.903
+margin_right = 304.225
+margin_bottom = 469.903
+text = "Enemy repopulating "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
 [connection signal="all_enemy_destroyed" from="EnemyArea" to="." method="_on_EnemyArea_all_enemy_destroyed"]
-[connection signal="low_enemy_defeat" from="EnemyArea/Low EnemyArea" to="EnemyArea" method="_on_EnemyArea_low_enemy_defeat"]
-[connection signal="destroyed" from="EnemyArea/Low EnemyArea/Enemy_low5" to="EnemyArea/Low EnemyArea" method="_on_Enemy_low_destroyed"]
-[connection signal="destroyed" from="EnemyArea/Low EnemyArea/Enemy_low" to="EnemyArea/Low EnemyArea" method="_on_Enemy_low_destroyed"]
-[connection signal="destroyed" from="EnemyArea/Low EnemyArea/Enemy_low2" to="EnemyArea/Low EnemyArea" method="_on_Enemy_low_destroyed"]
-[connection signal="destroyed" from="EnemyArea/Low EnemyArea/Enemy_low3" to="EnemyArea/Low EnemyArea" method="_on_Enemy_low_destroyed"]
-[connection signal="destroyed" from="EnemyArea/Low EnemyArea/Enemy_low4" to="EnemyArea/Low EnemyArea" method="_on_Enemy_low_destroyed"]
+[connection signal="repopulating" from="EnemyArea/LowEnemyArea" to="." method="_on_LowEnemyArea_repopulating"]
+[connection signal="repopulating" from="EnemyArea/LowEnemyArea" to="RepopulateDelay" method="_on_LowEnemyArea_repopulating"]
+[connection signal="destroyed" from="EnemyArea/LowEnemyArea/Enemy_low5" to="EnemyArea/LowEnemyArea" method="_on_Enemy_low_destroyed"]
+[connection signal="destroyed" from="EnemyArea/LowEnemyArea/Enemy_low" to="EnemyArea/LowEnemyArea" method="_on_Enemy_low_destroyed"]
+[connection signal="destroyed" from="EnemyArea/LowEnemyArea/Enemy_low2" to="EnemyArea/LowEnemyArea" method="_on_Enemy_low_destroyed"]
+[connection signal="destroyed" from="EnemyArea/LowEnemyArea/Enemy_low3" to="EnemyArea/LowEnemyArea" method="_on_Enemy_low_destroyed"]
+[connection signal="destroyed" from="EnemyArea/LowEnemyArea/Enemy_low4" to="EnemyArea/LowEnemyArea" method="_on_Enemy_low_destroyed"]
+[connection signal="timeout" from="RepopulateDelay" to="." method="_on_RepopulateDelay_timeout"]
+[connection signal="timeout" from="RepopulateDelay" to="EnemyArea/LowEnemyArea" method="_on_RepopulateDelay_timeout"]

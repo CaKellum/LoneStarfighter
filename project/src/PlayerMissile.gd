@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 
 const SPEED := -10
+
 var _velocity :=  Vector2()
 
 func fired(pos:Vector2)->void:
