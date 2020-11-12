@@ -26,6 +26,7 @@ __meta__ = {
 
 [node name="PlayerShip" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240.416, 625.082 )
+_speed = 500
 
 [node name="EnemyArea" type="Node2D" parent="."]
 script = ExtResource( 5 )
