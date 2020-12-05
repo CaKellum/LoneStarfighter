@@ -10,11 +10,14 @@ extents = Vector2( 240, 100 )
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 49.0901, 497.019, 0, 0, 0, 0, 94.4984, 359.112, 0, 0, 0, 0, 217.269, 283.432, 0, 0, 0, 0, 225.678, 414.611, 0, 0, 0, 0, 107.953, 490.292, 0, 0, 0, 0, 92.8167, 214.478, 0, 0, 0, 0, 82.7259, 125.343, 0, 0, 0, 0, 232.405, 128.707, 0, 0, 0, 0, 309.768, 150.57, 0, 0, 0, 0, 361.903, 261.568, 0, 0, 0, 0, 336.676, 401.157, 0, 0, 0, 0, 289.586, 485.246, 0, 0, 0, 0, 245.86, 555.882, 0, 0, 0, 0, 178.588, 688.743, 0, 0, 0, 0, 153.361, 609.699, 0, 0, 0, 0, 128.134, 682.016, 0, 0, 0, 0, 81.0441, 645.017, 0, 0, 0, 0, 42.3629, 534.018 )
+"points": PoolVector2Array( 0, 0, 0, 0, -130.942, 406.394, 0, 0, 0, 0, 98.2991, 294.021, 0, 0, 0, 0, 217.269, 283.432, 0, 0, 0, 0, 225.678, 414.611, 0, 0, 0, 0, 107.953, 490.292, 0, 0, 0, 0, 65.3363, 268.55, 0, 0, 0, 0, 245.133, 159.173, 0, 0, 0, 0, 361.903, 261.568, 0, 0, 0, 0, 336.676, 401.157, 0, 0, 0, 0, 289.586, 485.246, 0, 0, 0, 0, 245.86, 555.882, 0, 0, 0, 0, 178.588, 688.743, 0, 0, 0, 0, 290.082, 836.408, 0, 0, 0, 0, 143.248, 861.88, 0, 0, 0, 0, -78.5012, 884.354, 0, 0, 0, 0, -88.9893, 731.527 )
 }
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ColorRect" type="TextureRect" parent="."]
 margin_left = -862.307
@@ -31,20 +34,6 @@ __meta__ = {
 position = Vector2( 240.416, 625.082 )
 _speed = 500
 
-[node name="RepopulateDelay" type="Timer" parent="."]
-one_shot = true
-
-[node name="RepopWarning" type="Label" parent="."]
-visible = false
-margin_left = 173.225
-margin_top = 396.903
-margin_right = 304.225
-margin_bottom = 469.903
-text = "Enemy repopulating "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="EnemyArea" type="Area2D" parent="."]
 position = Vector2( 240, 100 )
 collision_mask = 2147483649
@@ -55,19 +44,18 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
 shape = SubResource( 1 )
 
-[node name="EnemyCollection" type="Path2D" parent="."]
+[node name="LowEnemyColection" type="Path2D" parent="."]
 curve = SubResource( 2 )
 
-[node name="Enemy_low" parent="EnemyCollection" instance=ExtResource( 3 )]
+[node name="Enemy_low" parent="LowEnemyColection" instance=ExtResource( 3 )]
 position = Vector2( -59.9323, 537.892 )
 
-[node name="Enemy_low2" parent="EnemyCollection" instance=ExtResource( 3 )]
+[node name="Enemy_low2" parent="LowEnemyColection" instance=ExtResource( 3 )]
 position = Vector2( -141.088, 667.94 )
 
-[node name="Enemy_low3" parent="EnemyCollection" instance=ExtResource( 3 )]
+[node name="Enemy_low3" parent="LowEnemyColection" instance=ExtResource( 3 )]
 position = Vector2( -231.933, 801.687 )
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
-[connection signal="timeout" from="RepopulateDelay" to="." method="_on_RepopulateDelay_timeout"]
-[connection signal="body_entered" from="EnemyArea" to="EnemyCollection/Enemy_low" method="_on_EnemyArea_body_entered"]
-[connection signal="body_entered" from="EnemyArea" to="EnemyCollection/Enemy_low2" method="_on_EnemyArea_body_entered"]
-[connection signal="body_entered" from="EnemyArea" to="EnemyCollection/Enemy_low3" method="_on_EnemyArea_body_entered"]
+[connection signal="body_entered" from="EnemyArea" to="LowEnemyColection/Enemy_low" method="_on_EnemyArea_body_entered"]
+[connection signal="body_entered" from="EnemyArea" to="LowEnemyColection/Enemy_low2" method="_on_EnemyArea_body_entered"]
+[connection signal="body_entered" from="EnemyArea" to="LowEnemyColection/Enemy_low3" method="_on_EnemyArea_body_entered"]

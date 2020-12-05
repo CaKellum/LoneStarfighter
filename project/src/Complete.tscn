@@ -4,6 +4,9 @@
 [ext_resource path="res://src/EndScreen.tscn" type="PackedScene" id=2]
 
 [node name="Complete" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Game" parent="." instance=ExtResource( 1 )]
 

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal destroyed
+signal in_stage
 
 
 var direction := 1
@@ -41,3 +42,9 @@ func _on_EnemyArea_body_entered(body)->void:
 	if body == self:
 		is_in_area = true
 		is_on_path = false
+		emit_signal("in_stage")
+
+
+func _on_HoverTimer_timeout():
+	is_in_area = false
+	is_on_path = true
