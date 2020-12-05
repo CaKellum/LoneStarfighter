@@ -59,15 +59,15 @@ shape = SubResource( 1 )
 curve = SubResource( 2 )
 
 [node name="Enemy_low" parent="EnemyCollection" instance=ExtResource( 3 )]
-position = Vector2( -68.9221, 35.9594 )
+position = Vector2( -59.9323, 537.892 )
 
 [node name="Enemy_low2" parent="EnemyCollection" instance=ExtResource( 3 )]
-position = Vector2( -208.512, 122.556 )
+position = Vector2( -141.088, 667.94 )
 
 [node name="Enemy_low3" parent="EnemyCollection" instance=ExtResource( 3 )]
-position = Vector2( -345.804, 214.351 )
+position = Vector2( -231.933, 801.687 )
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
 [connection signal="timeout" from="RepopulateDelay" to="." method="_on_RepopulateDelay_timeout"]
-[connection signal="body_entered" from="EnemyArea" to="EnemyCollection/Enemy_low3" method="_on_EnemyArea_body_entered"]
 [connection signal="body_entered" from="EnemyArea" to="EnemyCollection/Enemy_low" method="_on_EnemyArea_body_entered"]
 [connection signal="body_entered" from="EnemyArea" to="EnemyCollection/Enemy_low2" method="_on_EnemyArea_body_entered"]
+[connection signal="body_entered" from="EnemyArea" to="EnemyCollection/Enemy_low3" method="_on_EnemyArea_body_entered"]
