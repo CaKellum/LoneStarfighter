@@ -84,7 +84,7 @@ shape = SubResource( 10 )
 wait_time = 10.0
 one_shot = true
 script = ExtResource( 5 )
-[connection signal="destroyed" from="." to="Appearance" method="_on_Enemy_low_destroyed"]
+[connection signal="destroyed" from="." to="Appearance" method="_on_Enemy_destroyed"]
 [connection signal="in_stage" from="." to="HoverTimer" method="_on_Enemy_low_in_stage"]
 [connection signal="animation_finished" from="Appearance" to="." method="_on_Appearance_animation_finished"]
 [connection signal="timeout" from="HoverTimer" to="." method="_on_HoverTimer_timeout"]

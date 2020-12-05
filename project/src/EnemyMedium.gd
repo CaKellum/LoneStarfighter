@@ -43,6 +43,6 @@ func _on_EnemyArea_body_entered(body)->void:
 		emit_signal("in_stage")
 
 
-func _on_HoverTimer_timeout():
+func _on_HoverTimer_timeout()-> void:
 	is_in_area = false
 	is_on_path = true

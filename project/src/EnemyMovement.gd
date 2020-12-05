@@ -8,7 +8,7 @@ var path_spot := 0.0
 var direction := 1
 var start_pos := Vector2.ZERO
 
-func _init(start_position:Vector2):
+func _init(start_position:Vector2)->void:
 	start_pos = start_position
 
 
@@ -24,7 +24,7 @@ func on_path(path_points:Array, pos:Vector2)->Vector2:
 	
 
 func oscillate(pos:Vector2)->Vector2:
-	pos.x +=2*direction
+	pos.x +=5*direction
 	pos.x = clamp(pos.x, MIN_X, MAX_X)
 	if pos.x == MIN_X:
 		direction = 1
