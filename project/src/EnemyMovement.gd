@@ -3,6 +3,7 @@ class_name EnemyMovement
 
 const MIN_X := 0
 const MAX_X := 480
+const MISSLE = preload("res://src/PlayerMissile.tscn")
 
 var path_spot := 0.0
 var direction := 1
@@ -41,6 +42,12 @@ func error_oscillation(pos:Vector2)->Vector2:
 	if pos.x<start_pos.x-20:
 		direction = 1
 	return pos
+
+
+func fire(arena:Node2D, muzzle:Vector2)->void:
+	var shot = MISSLE.instance()
+	arena.add_child(shot)
+	shot.fired(muzzle,10)
 
 
 func _distance(target:Vector2,pos:Vector2)->float:

@@ -28,10 +28,10 @@ _data = {
 script = ExtResource( 6 )
 
 [node name="ColorRect" type="TextureRect" parent="."]
-margin_left = -866.031
-margin_top = -6.0539
-margin_right = 1181.97
-margin_bottom = 1529.95
+margin_left = -867.813
+margin_top = -0.708502
+margin_right = 1180.19
+margin_bottom = 1535.29
 texture = ExtResource( 2 )
 stretch_mode = 4
 __meta__ = {
@@ -39,11 +39,11 @@ __meta__ = {
 }
 
 [node name="PlayerShip" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240.416, 625.082 )
+position = Vector2( 245.761, 655.373 )
 _speed = 500
 
 [node name="LowEnemyColection" type="Path2D" parent="."]
-position = Vector2( -42.7632, 65.9265 )
+position = Vector2( -138.98, 99.7807 )
 curve = SubResource( 2 )
 script = ExtResource( 4 )
 

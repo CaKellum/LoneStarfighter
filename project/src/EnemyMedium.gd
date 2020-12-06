@@ -2,9 +2,11 @@ extends KinematicBody2D
 
 signal destroyed
 signal in_stage
+signal fired
 
 var is_on_path := false
 var is_in_area := false
+var can_fire := false
 var path_points := []
 
 
@@ -19,6 +21,10 @@ func _ready()->void:
 
 
 func _process(delta:float)->void:
+	if can_fire:
+		enemy_move.fire(get_parent().get_parent(), $Muzzle.global_position)
+		can_fire = false
+		emit_signal("fired")
 	if is_on_path:
 		var velocity := enemy_move.on_path(path_points,position)
 		var _collison := move_and_collide((velocity*100)*delta)

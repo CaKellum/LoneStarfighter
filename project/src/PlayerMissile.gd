@@ -1,13 +1,11 @@
 extends KinematicBody2D
 
 
-const SPEED := -10
-
 var _velocity :=  Vector2()
 
-func fired(pos:Vector2)->void:
+func fired(pos:Vector2, speed:int = -10)->void:
 	position = pos
-	_velocity = Vector2(0,SPEED)
+	_velocity = Vector2(0,speed)
 
 
 func _physics_process(_delta:float)->void:
