@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/PlayerShip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Background-2.jpg" type="Texture" id=2]
@@ -9,32 +9,29 @@
 [ext_resource path="res://src/HardEnemyColection.gd" type="Script" id=7]
 [ext_resource path="res://src/EnemyMedium.tscn" type="PackedScene" id=8]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 240, 100 )
-
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -130.942, 406.394, 0, 0, 0, 0, 98.2991, 294.021, 0, 0, 0, 0, 217.269, 283.432, 0, 0, 0, 0, 225.678, 414.611, 0, 0, 0, 0, 107.953, 490.292, 0, 0, 0, 0, 65.3363, 268.55, 0, 0, 0, 0, 245.133, 159.173, 0, 0, 0, 0, 361.903, 261.568, 0, 0, 0, 0, 336.676, 401.157, 0, 0, 0, 0, 289.586, 485.246, 0, 0, 0, 0, 245.86, 555.882, 0, 0, 0, 0, 178.588, 688.743, 0, 0, 0, 0, 290.082, 836.408, 0, 0, 0, 0, 143.248, 861.88, 0, 0, 0, 0, -78.5012, 884.354, 0, 0, 0, 0, -88.9893, 731.527 )
+"points": PoolVector2Array( 0, 0, 0, 0, 35.7618, 511.81, 0, 0, 0, 0, 160.488, 420.938, 81.9627, 94.4353, -81.9627, -94.4353, 153.36, 283.74, -119.38, -7.12719, 119.38, 7.12719, 278.086, 78.8331, 64.1447, -64.1447, -64.1447, 64.1447, 418.848, 297.994, -285.088, 235.197, 285.088, -235.197, 415.285, 422.72, 0, 0, 0, 0, 488.338, 526.064 )
 }
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 72.8929, 315.217, -6.73477, -31.4289, 6.73477, 31.4289, 405.068, 462.684, 0, 0, 0, 0, 434.932, 569.775, 0, 0, 0, 0, 77.3089, 583.91, 0, 0, 0, 0, 389.677, 685.741, 0, 0, 0, 0, 432.103, 846.961, 0, 0, 0, 0, -109.02, 891.465, 0, 0, 0, 0, -48.4068, 583.91 )
+"points": PoolVector2Array( 0, 0, 0, 0, -133.795, 245.837, 1.86744, 95.655, -1.86744, -95.655, 116.441, 250.961, -28.0115, -117.861, 28.0115, 117.861, 301.317, 256.086, -65.3603, -51.2438, 65.3603, 51.2438, 460.049, 273.167, 7.46975, -87.1144, -7.46975, 87.1144, 508.603, 404.693, 268.911, -34.1625, -268.911, 34.1625, 303.185, 597.711, 0, 0, 0, 0, -133.795, 397.86 )
 }
 
 [sub_resource type="Curve2D" id=4]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 38.3683, 298.5, -82.0244, -16.9706, 82.0244, 16.9706, 227.873, 298.5, -82.0244, -84.8528, 82.0244, 84.8528, 541.828, 343.755, 59.397, -110.309, -59.397, 110.309, 584.255, 626.598, 65.0538, -14.1421, -65.0538, 14.1421, 383.436, 790.647, 50.9117, 87.6812, -50.9117, -87.6812, -88.9109, 742.563, -28.2843, 59.397, 28.2843, -59.397, -69.1119, 564.372, 28.2843, -260.215, -28.2843, 260.215, 182.618, 488.005, 5.65685, 0, -5.65685, 0, -97.3962, 329.613, 0, 36.7696, 0, -36.7696, -136.994, 191.02, -65.0538, 36.7696, 65.0538, -36.7696, -35.1708, -66.3669, 0, 0, 0, 0, 185.447, -114.45, 0, 0, 0, 0, 587.083, -88.9944, 0, 0, 0, 0, 640.823, 125.966, 0, 0, 0, 0, 643.652, 304.157 )
+"points": PoolVector2Array(  )
 }
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 6 )
 
 [node name="ColorRect" type="TextureRect" parent="."]
-margin_left = -867.919
-margin_top = -15.8971
-margin_right = 1180.08
-margin_bottom = 1520.1
+margin_left = -866.031
+margin_top = -6.0539
+margin_right = 1181.97
+margin_bottom = 1529.95
 texture = ExtResource( 2 )
 stretch_mode = 4
 __meta__ = {
@@ -45,52 +42,38 @@ __meta__ = {
 position = Vector2( 240.416, 625.082 )
 _speed = 500
 
-[node name="EnemyArea" type="Area2D" parent="."]
-position = Vector2( 240, 100 )
-collision_mask = 2147483649
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
-shape = SubResource( 1 )
-
 [node name="LowEnemyColection" type="Path2D" parent="."]
+position = Vector2( -42.7632, 65.9265 )
 curve = SubResource( 2 )
 script = ExtResource( 4 )
 
 [node name="Enemy_low" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -59.9323, 537.892 )
+position = Vector2( -93.7865, 512.947 )
 
 [node name="Enemy_low2" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -141.088, 667.94 )
+position = Vector2( -219.487, 514.706 )
 
 [node name="Enemy_low3" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -231.933, 801.687 )
+position = Vector2( -376.259, 507.69 )
 
 [node name="MedEnemyCollection" type="Path2D" parent="."]
-position = Vector2( 7.90179, -183.594 )
+position = Vector2( 38.6956, -181.17 )
+scale = Vector2( 0.954141, 1.04313 )
 curve = SubResource( 3 )
 script = ExtResource( 5 )
 
 [node name="Enemey_Medium" parent="MedEnemyCollection" instance=ExtResource( 8 )]
-position = Vector2( -716.798, 84.9499 )
+position = Vector2( -550.227, 244.403 )
 
 [node name="Enemey_Medium2" parent="MedEnemyCollection" instance=ExtResource( 8 )]
-position = Vector2( -361.884, 174.668 )
+position = Vector2( -242.019, 246.587 )
 
 [node name="Enemey_Medium3" parent="MedEnemyCollection" instance=ExtResource( 8 )]
-position = Vector2( -572.477, 132.237 )
+position = Vector2( -386.601, 244.492 )
 
 [node name="HardEnemyCollection" type="Path2D" parent="."]
-position = Vector2( 0, -8.48529 )
+position = Vector2( -96.2751, -27.3628 )
 curve = SubResource( 4 )
 script = ExtResource( 7 )
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
-[connection signal="body_entered" from="EnemyArea" to="MedEnemyCollection/Enemey_Medium3" method="_on_EnemyArea_body_entered"]
-[connection signal="body_entered" from="EnemyArea" to="LowEnemyColection/Enemy_low2" method="_on_EnemyArea_body_entered"]
-[connection signal="body_entered" from="EnemyArea" to="LowEnemyColection/Enemy_low3" method="_on_EnemyArea_body_entered"]
-[connection signal="body_entered" from="EnemyArea" to="MedEnemyCollection/Enemey_Medium" method="_on_EnemyArea_body_entered"]
-[connection signal="body_entered" from="EnemyArea" to="MedEnemyCollection/Enemey_Medium2" method="_on_EnemyArea_body_entered"]
-[connection signal="body_entered" from="EnemyArea" to="LowEnemyColection/Enemy_low" method="_on_EnemyArea_body_entered"]
 [connection signal="low_enemy_destroyed" from="LowEnemyColection" to="." method="_on_LowEnemyColection_low_enemy_destroyed"]

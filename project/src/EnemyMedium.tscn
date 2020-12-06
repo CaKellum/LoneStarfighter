@@ -68,6 +68,7 @@ __meta__ = {
 
 [node name="Appearance" type="AnimatedSprite" parent="."]
 position = Vector2( 12.1919, 2.61996 )
+rotation = 3.14159
 frames = SubResource( 8 )
 animation = "undamaged"
 offset = Vector2( -12.1919, -2.61996 )

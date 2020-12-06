@@ -21,7 +21,7 @@ func _ready()->void:
 func _process(delta:float)->void:
 	if is_on_path:
 		var velocity := enemy_move.on_path(path_points,position)
-		var _collison := move_and_collide((velocity*150)*delta)
+		var _collison := move_and_collide((velocity*100)*delta)
 	elif is_in_area:
 		position = enemy_move.oscillate(position)
 	else:
