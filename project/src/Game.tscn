@@ -53,11 +53,11 @@ position = Vector2( -442.224, 543.866 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Enemy_low4" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -878.384, 448.612 )
+position = Vector2( -785.046, 595.69 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Enemy_low5" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -752.973, 407.627 )
+position = Vector2( -699.233, 571.676 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Enemy_low6" parent="LowEnemyColection" instance=ExtResource( 3 )]
@@ -80,27 +80,27 @@ script = ExtResource( 5 )
 
 [node name="Enemey_Medium" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -550.227, 244.403 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Enemey_Medium2" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -242.019, 246.587 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Enemey_Medium3" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -386.601, 244.492 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Enemey_Medium5" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -1168.36, 245.109 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Enemey_Medium7" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -961.482, 228.771 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Enemey_Medium8" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -721.947, 248.591 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="HardEnemyCollection" type="Path2D" parent="."]
 position = Vector2( -96.2751, -27.3628 )

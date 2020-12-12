@@ -7,8 +7,9 @@ radius = 3.41873
 height = 24.2165
 
 [node name="Missile" type="KinematicBody2D"]
-collision_layer = 2
-collision_mask = 2
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 14
+collision_mask = 14
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

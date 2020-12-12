@@ -4,6 +4,7 @@ signal game_over
 
 const MISSILE := preload("res://src/PlayerMissile.tscn")
 const HEALTHMANAGER := preload("res://src/PlayerHealth.gd")
+const ENEMY_BITS := [1,2,3,4]
 
 var _velocity := Vector2.ZERO
 var amt_fired_missiles := 0
@@ -38,9 +39,9 @@ func _fire_missle()->void:
 	get_parent().add_child(shot)
 	amt_fired_missiles +=1
 	if amt_fired_missiles%2 == 0:
-		shot.fired($RightMuzzle.global_position)
+		shot.fired($RightMuzzle.global_position,-10)
 	else:
-		shot.fired($LeftMuzzle.global_position)
+		shot.fired($LeftMuzzle.global_position,-10)
 
 
 func hit()->void:
@@ -59,8 +60,9 @@ func _physics_process(delta:float)->void:
 	var collision := move_and_collide(_velocity*delta)
 	if collision:
 		print(collision.collider)
-		if collision.collider.get_collision_layer_bit(1):
-			self.hit()
+		for i in ENEMY_BITS:
+			if collision.collider.get_collision_layer_bit(1):
+				self.hit()
 
 func _on_CannonCoolDown_timeout()->void:
 	is_fatigued = false

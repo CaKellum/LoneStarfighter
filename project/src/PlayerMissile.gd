@@ -3,10 +3,13 @@ extends KinematicBody2D
 
 var _velocity :=  Vector2()
 
-func fired(pos:Vector2, speed:int = -10)->void:
+func fired(pos:Vector2, speed:int)->void:
 	if speed != -10:
-		set_collision_layer_bit(1,true)
-		set_collision_mask_bit(1,true)
+		for i in collision_mask:
+			set_collision_layer_bit(i,false)
+			set_collision_mask_bit(i,false)
+		set_collision_layer_bit(0,true)
+		set_collision_mask_bit(0,true)
 	position = pos
 	_velocity = Vector2(0,speed)
 

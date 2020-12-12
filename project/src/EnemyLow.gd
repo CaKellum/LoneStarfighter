@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 signal destroyed
 signal in_stage
-signal fired
 
+var rng := RandomNumberGenerator.new()
 var is_on_path := false
 var is_in_area := false
 var can_fire := false
@@ -22,10 +22,6 @@ func _ready()->void:
 
 
 func _process(delta:float)->void:
-	if can_fire:
-		enemy_move.fire(get_parent().get_parent(), $Muzzle.global_position)
-		can_fire = false
-		emit_signal("fired")
 	if is_on_path:
 		if can_move:
 			velocity = enemy_move.on_path(path_points,position)
@@ -34,6 +30,9 @@ func _process(delta:float)->void:
 		position = enemy_move.oscillate(position)
 	else:
 		position = enemy_move.error_oscillation(position)
+	if can_fire and can_move:
+		enemy_move.fire(get_parent().get_parent(), $Muzzle.global_position)
+		can_fire = false
 
 
 func hit()-> void:
@@ -60,3 +59,9 @@ func _on_EnemyArea_body_entered(body)->void:
 func _on_HoverTimer_timeout():
 	is_in_area = false
 	is_on_path = true
+
+
+func _on_FireTimer_timeout():
+	can_fire = true
+	$FireTimer.wait_time = rng.randf_range(1,5)
+	$FireTimer.start()
