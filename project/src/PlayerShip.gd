@@ -8,6 +8,7 @@ const HEALTHMANAGER := preload("res://src/PlayerHealth.gd")
 var _velocity := Vector2.ZERO
 var amt_fired_missiles := 0
 var is_fatigued := false
+var can_move := true
 
 export var _speed := 100
 
@@ -43,16 +44,23 @@ func _fire_missle()->void:
 
 
 func hit()->void:
+	set_collision_layer_bit(0,false)
+	set_collision_mask_bit(0,false)
+	can_move = false
+	_velocity = Vector2.ZERO
 	$SpaceshipLook.play("exploded")
-	if !$SpaceshipLook.is_playing():
-		emit_signal("game_over")
-		queue_free()
+	emit_signal("game_over")
+	self.queue_free()
 
 
-func _physics_process(_delta:float)->void:
-	_get_input()
-	_velocity = move_and_slide(_velocity)
-
+func _physics_process(delta:float)->void:
+	if can_move:
+		_get_input()
+	var collision := move_and_collide(_velocity*delta)
+	if collision:
+		print(collision.collider)
+		if collision.collider.get_collision_layer_bit(1):
+			self.hit()
 
 func _on_CannonCoolDown_timeout()->void:
 	is_fatigued = false

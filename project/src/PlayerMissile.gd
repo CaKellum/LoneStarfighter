@@ -4,6 +4,9 @@ extends KinematicBody2D
 var _velocity :=  Vector2()
 
 func fired(pos:Vector2, speed:int = -10)->void:
+	if speed != -10:
+		set_collision_layer_bit(1,true)
+		set_collision_mask_bit(1,true)
 	position = pos
 	_velocity = Vector2(0,speed)
 

@@ -7,6 +7,8 @@ signal fired
 var is_on_path := false
 var is_in_area := false
 var can_fire := false
+var can_move := true
+var velocity := Vector2.ZERO
 var path_points := []
 
 
@@ -26,8 +28,9 @@ func _process(delta:float)->void:
 		can_fire = false
 		emit_signal("fired")
 	if is_on_path:
-		var velocity := enemy_move.on_path(path_points,position)
-		var _collison := move_and_collide((velocity*100)*delta)
+		if can_move:
+			velocity = enemy_move.on_path(path_points,position)
+			var _collison := move_and_collide((velocity*100)*delta)
 	elif is_in_area:
 		position = enemy_move.oscillate(position)
 	else:
@@ -35,6 +38,12 @@ func _process(delta:float)->void:
 
 
 func hit()-> void:
+	can_move = false
+	velocity = Vector2.ZERO
+	set_collision_layer_bit(0,false)
+	set_collision_layer_bit(1,false)
+	set_collision_mask_bit(0,false)
+	set_collision_mask_bit(1,false)
 	emit_signal("destroyed")
 
 

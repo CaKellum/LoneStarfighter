@@ -9,17 +9,17 @@
 [ext_resource path="res://src/HardEnemyColection.gd" type="Script" id=7]
 [ext_resource path="res://src/EnemyMedium.tscn" type="PackedScene" id=8]
 
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 270.769, 127.816, -270.769, -127.816, 35.7618, 511.81, 0, 0, 0, 0, 160.488, 420.938, 81.9627, 94.4353, -81.9627, -94.4353, 153.36, 283.74, -119.38, -7.12719, 119.38, 7.12719, 278.086, 78.8331, 64.1447, -64.1447, -64.1447, 64.1447, 418.848, 297.994, 343.086, -127.816, -343.086, 127.816, 488.338, 526.064, -235.451, -100.908, 235.451, 100.908, 271.52, 347.721, 314.495, 139.589, -314.495, -139.589, 36.7605, 513.183 )
+}
+
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 35.7618, 511.81, 0, 0, 0, 0, 160.488, 420.938, 81.9627, 94.4353, -81.9627, -94.4353, 153.36, 283.74, -119.38, -7.12719, 119.38, 7.12719, 278.086, 78.8331, 64.1447, -64.1447, -64.1447, 64.1447, 418.848, 297.994, -285.088, 235.197, 285.088, -235.197, 415.285, 422.72, 0, 0, 0, 0, 488.338, 526.064 )
+"points": PoolVector2Array( -155.111, 19.3471, 155.111, -19.3471, -125.164, 205.695, 1.86744, 95.655, -1.86744, -95.655, 142.755, 244.389, -28.0115, -117.861, 28.0115, 117.861, 301.317, 256.086, -65.3603, -51.2438, 65.3603, 51.2438, 460.049, 273.167, 7.46975, -87.1144, -7.46975, 87.1144, 508.603, 404.693, 268.911, -34.1625, -268.911, 34.1625, 303.185, 597.711, 112.808, 108.021, -112.808, -108.021, -134.348, 395.249, -119.859, 48.3677, 119.859, -48.3677, -160.417, 189.572 )
 }
 
 [sub_resource type="Curve2D" id=3]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -133.795, 245.837, 1.86744, 95.655, -1.86744, -95.655, 116.441, 250.961, -28.0115, -117.861, 28.0115, 117.861, 301.317, 256.086, -65.3603, -51.2438, 65.3603, 51.2438, 460.049, 273.167, 7.46975, -87.1144, -7.46975, 87.1144, 508.603, 404.693, 268.911, -34.1625, -268.911, 34.1625, 303.185, 597.711, 0, 0, 0, 0, -133.795, 397.86 )
-}
-
-[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array(  )
 }
@@ -28,10 +28,10 @@ _data = {
 script = ExtResource( 6 )
 
 [node name="ColorRect" type="TextureRect" parent="."]
-margin_left = -867.813
-margin_top = -0.708502
-margin_right = 1180.19
-margin_bottom = 1535.29
+margin_left = -777.145
+margin_top = -195.33
+margin_right = 1270.86
+margin_bottom = 1340.67
 texture = ExtResource( 2 )
 stretch_mode = 4
 __meta__ = {
@@ -39,41 +39,72 @@ __meta__ = {
 }
 
 [node name="PlayerShip" parent="." instance=ExtResource( 1 )]
-position = Vector2( 245.761, 655.373 )
+position = Vector2( 250.806, 648.646 )
+scale = Vector2( 0.5, 0.5 )
 _speed = 500
 
 [node name="LowEnemyColection" type="Path2D" parent="."]
-position = Vector2( -138.98, 99.7807 )
-curve = SubResource( 2 )
+position = Vector2( -48.1632, 135.098 )
+curve = SubResource( 1 )
 script = ExtResource( 4 )
 
 [node name="Enemy_low" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -93.7865, 512.947 )
+position = Vector2( -442.224, 543.866 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy_low4" parent="LowEnemyColection" instance=ExtResource( 3 )]
+position = Vector2( -878.384, 448.612 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy_low5" parent="LowEnemyColection" instance=ExtResource( 3 )]
+position = Vector2( -752.973, 407.627 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Enemy_low6" parent="LowEnemyColection" instance=ExtResource( 3 )]
+position = Vector2( -565.476, 556.447 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Enemy_low2" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -219.487, 514.706 )
+position = Vector2( -146.945, 519.463 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Enemy_low3" parent="LowEnemyColection" instance=ExtResource( 3 )]
-position = Vector2( -376.259, 507.69 )
+position = Vector2( -337.304, 541.55 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="MedEnemyCollection" type="Path2D" parent="."]
 position = Vector2( 38.6956, -181.17 )
 scale = Vector2( 0.954141, 1.04313 )
-curve = SubResource( 3 )
+curve = SubResource( 2 )
 script = ExtResource( 5 )
 
 [node name="Enemey_Medium" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -550.227, 244.403 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="Enemey_Medium2" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -242.019, 246.587 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="Enemey_Medium3" parent="MedEnemyCollection" instance=ExtResource( 8 )]
 position = Vector2( -386.601, 244.492 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Enemey_Medium5" parent="MedEnemyCollection" instance=ExtResource( 8 )]
+position = Vector2( -1168.36, 245.109 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Enemey_Medium7" parent="MedEnemyCollection" instance=ExtResource( 8 )]
+position = Vector2( -961.482, 228.771 )
+scale = Vector2( 0.75, 0.75 )
+
+[node name="Enemey_Medium8" parent="MedEnemyCollection" instance=ExtResource( 8 )]
+position = Vector2( -721.947, 248.591 )
+scale = Vector2( 0.75, 0.75 )
 
 [node name="HardEnemyCollection" type="Path2D" parent="."]
 position = Vector2( -96.2751, -27.3628 )
-curve = SubResource( 4 )
+curve = SubResource( 3 )
 script = ExtResource( 7 )
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
 [connection signal="low_enemy_destroyed" from="LowEnemyColection" to="." method="_on_LowEnemyColection_low_enemy_destroyed"]
