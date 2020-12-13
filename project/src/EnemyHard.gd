@@ -49,6 +49,7 @@ func hit()-> void:
 		emit_signal("destroyed")
 	else:
 		$Appearance.play("Ship2")
+		hit_count+=1
 
 
 func _on_Appearance_animation_finished()->void:

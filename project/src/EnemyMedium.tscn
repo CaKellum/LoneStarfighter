@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/HoverTimer.gd" type="Script" id=1]
 [ext_resource path="res://src/EnemyMedium.gd" type="Script" id=2]
 [ext_resource path="res://assets/M484ExplosionSet1.png" type="Texture" id=3]
 [ext_resource path="res://assets/shipsheet.png" type="Texture" id=4]
 [ext_resource path="res://src/Appearance.gd" type="Script" id=5]
-[ext_resource path="res://src/FireTimer.gd" type="Script" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -86,7 +85,6 @@ script = ExtResource( 1 )
 wait_time = 2.0
 one_shot = true
 autostart = true
-script = ExtResource( 6 )
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 12, 45 )

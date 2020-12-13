@@ -48,8 +48,7 @@ func hit()-> void:
 		set_collision_mask_bit(3,false)
 		emit_signal("destroyed")
 	else:
-		#dosomething
-		var i = 0
+		hit_count += 1
 
 
 func _on_Appearance_animation_finished()->void:
