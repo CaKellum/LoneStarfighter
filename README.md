@@ -50,4 +50,4 @@ This iteration has been a bit of a struggle for me mostly due to personal life u
 enemy ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [OGA-BY 3.0](https://static.opengameart.org/OGA-BY-3.0.txt)
 player ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
 backgrounds are by [Rawdanitsu](https://opengameart.org/users/rawdanitsu) licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-menu music is "Deep Space" by [Arjen Shumacher](https://skiomusic.com/arjen-schumacher) licensed under
+Boss Ship is ["Yellow Starship"](https://opengameart.org/content/yellow-starship) by [MillionthVector](http://millionthvector.blogspot.de) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 
