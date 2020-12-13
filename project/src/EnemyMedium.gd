@@ -64,5 +64,5 @@ func _on_HoverTimer_timeout()-> void:
 
 func _on_FireTimer_timeout()->void:
 	can_fire = true
-	$FireTimer.wait_time = rng.randf_range(1,5)
+	$FireTimer.wait_time = rng.randf_range(3,5)
 	$FireTimer.start()

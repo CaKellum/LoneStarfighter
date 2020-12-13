@@ -44,7 +44,7 @@ scale = Vector2( 0.5, 0.5 )
 _speed = 500
 
 [node name="LowEnemyColection" type="Path2D" parent="."]
-position = Vector2( -48.1632, 135.098 )
+position = Vector2( -48, 100 )
 curve = SubResource( 1 )
 script = ExtResource( 4 )
 
