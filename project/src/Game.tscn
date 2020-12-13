@@ -22,7 +22,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 140.106, -1.09615, 0, 0, 0, 0, 383.351, -20.8951, -48.0833, -76.3675, 48.0833, 76.3675, 586.998, -12.4099, -234.759, -50.9117, 234.759, 50.9117, 374.866, 103.556, 84.8528, -42.4264, -84.8528, 42.4264, 338.096, 213.864, 0, 0, 0, 0, 397.493, 389.227, 0, 0, 0, 0, 530.429, 290.232, 0, 0, 0, 0, 422.949, 162.953, 0, 0, 0, 0, 343.753, 148.81, 0, 0, 0, 0, 239.101, 194.065, 0, 0, 0, 0, 176.876, 301.546, 0, 0, 0, 0, 222.131, 392.055, 0, 0, 0, 0, 349.41, 442.967, 0, 0, 0, 0, 671.851, 95.0704, 0, 0, 0, 0, 496.488, -102.92 )
+"points": PoolVector2Array( 0, 0, 0, 0, 156.958, -238.23, 0, 0, 0, 0, 376.089, -41.348, -48.0833, -76.3675, 48.0833, 76.3675, 586.998, -12.4099, 0, 0, 0, 0, 354.899, 94.0337, -234.759, -50.9117, 234.759, 50.9117, 368.384, 183.932, 0, 0, 0, 0, 648.567, 132.241, 84.8528, -42.4264, -84.8528, 42.4264, 497.987, 3.38607, -122.488, 5.94603, 122.488, -5.94603, 397.493, 389.227, -41.6222, 79.6769, 41.6222, -79.6769, 530.429, 290.232, 0, 0, 0, 0, 438.055, 156.963, 73.7308, -4.75683, -73.7308, 4.75683, 343.753, 148.81, 55.0398, -99.8615, -55.0398, 99.8615, 175.851, 126.996, 10.7029, -128.434, -10.7029, 128.434, 176.876, 301.546, -13.0813, 111.785, 13.0813, -111.785, 323.843, 379.713, -228.328, 38.0546, 228.328, -38.0546, 407.682, 234.24, 45.1899, 176.003, -45.1899, -176.003, 602.039, 115.627, 0, 0, 0, 0, -9.35133, -20.2637 )
 }
 
 [node name="Game" type="Node2D"]
@@ -73,6 +73,8 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( -337.304, 541.55 )
 scale = Vector2( 0.5, 0.5 )
 
+[node name="Timer" type="Timer" parent="LowEnemyColection"]
+
 [node name="MedEnemyCollection" type="Path2D" parent="."]
 position = Vector2( 38.6956, -181.17 )
 scale = Vector2( 0.954141, 1.04313 )
@@ -103,6 +105,8 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( -721.947, 248.591 )
 scale = Vector2( 0.6, 0.6 )
 
+[node name="Timer" type="Timer" parent="MedEnemyCollection"]
+
 [node name="HardEnemyCollection" type="Path2D" parent="."]
 position = Vector2( -143.843, 77.2874 )
 curve = SubResource( 3 )
@@ -116,6 +120,12 @@ position = Vector2( -721.249, -110.309 )
 
 [node name="Enemy_Hard3" parent="HardEnemyCollection" instance=ExtResource( 9 )]
 position = Vector2( -873.984, -101.823 )
+
+[node name="Timer" type="Timer" parent="HardEnemyCollection"]
+
+[node name="WaveDelay" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
 [connection signal="low_enemy_destroyed" from="LowEnemyColection" to="." method="_on_LowEnemyColection_low_enemy_destroyed"]
 [connection signal="med_enemy_destroyed" from="MedEnemyCollection" to="." method="_on_MedEnemyCollection_med_enemy_destroyed"]
