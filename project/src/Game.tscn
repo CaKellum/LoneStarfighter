@@ -80,6 +80,7 @@ position = Vector2( -337.304, 541.55 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Timer" type="Timer" parent="LowEnemyColection"]
+one_shot = true
 
 [node name="MedEnemyCollection" type="Path2D" parent="."]
 position = Vector2( 38.6956, -181.17 )
@@ -112,6 +113,7 @@ position = Vector2( -721.947, 248.591 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Timer" type="Timer" parent="MedEnemyCollection"]
+one_shot = true
 
 [node name="HardEnemyCollection" type="Path2D" parent="."]
 position = Vector2( -143.843, 77.2874 )
@@ -128,6 +130,7 @@ position = Vector2( -721.249, -110.309 )
 position = Vector2( -873.984, -101.823 )
 
 [node name="Timer" type="Timer" parent="HardEnemyCollection"]
+one_shot = true
 
 [node name="WaveDelay" type="Timer" parent="."]
 wait_time = 10.0
@@ -151,11 +154,29 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="game_live" from="." to="HardEnemyCollection/Enemy_Hard" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="HardEnemyCollection/Enemy_Hard2" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="LowEnemyColection/Enemy_low3" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="MedEnemyCollection/Enemey_Medium5" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="MedEnemyCollection/Enemey_Medium7" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="MedEnemyCollection/Enemey_Medium" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="MedEnemyCollection/Enemey_Medium2" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="LowEnemyColection/Enemy_low4" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="LowEnemyColection/Enemy_low2" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="MedEnemyCollection/Enemey_Medium3" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="MedEnemyCollection/Enemey_Medium8" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="LowEnemyColection/Enemy_low5" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="LowEnemyColection/Enemy_low" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="LowEnemyColection/Enemy_low6" method="_on_Game_game_live"]
+[connection signal="game_live" from="." to="HardEnemyCollection/Enemy_Hard3" method="_on_Game_game_live"]
+[connection signal="repopulate" from="." to="LowEnemyColection" method="_on_Game_repopulate"]
+[connection signal="repopulate" from="." to="MedEnemyCollection" method="_on_Game_repopulate"]
+[connection signal="repopulate" from="." to="HardEnemyCollection" method="_on_Game_repopulate"]
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
 [connection signal="low_enemy_destroyed" from="LowEnemyColection" to="." method="_on_LowEnemyColection_low_enemy_destroyed"]
+[connection signal="timeout" from="LowEnemyColection/Timer" to="LowEnemyColection" method="_on_Timer_timeout"]
 [connection signal="med_enemy_destroyed" from="MedEnemyCollection" to="." method="_on_MedEnemyCollection_med_enemy_destroyed"]
+[connection signal="timeout" from="MedEnemyCollection/Timer" to="MedEnemyCollection" method="_on_Timer_timeout"]
 [connection signal="hard_enemy_destroyed" from="HardEnemyCollection" to="." method="_on_HardEnemyCollection_hard_enemy_destroyed"]
+[connection signal="timeout" from="HardEnemyCollection/Timer" to="HardEnemyCollection" method="_on_Timer_timeout"]
 [connection signal="timeout" from="WaveDelay" to="." method="_on_WaveDelay_timeout"]
-[connection signal="timeout" from="WaveDelay" to="LowEnemyColection" method="_on_WaveDelay_timeout"]
-[connection signal="timeout" from="WaveDelay" to="MedEnemyCollection" method="_on_WaveDelay_timeout"]
-[connection signal="timeout" from="WaveDelay" to="HardEnemyCollection" method="_on_WaveDelay_timeout"]

@@ -44,14 +44,14 @@ func _fire_missle()->void:
 		shot.fired($LeftMuzzle.global_position,-10)
 
 
-func hit()->void:
-	set_collision_layer_bit(0,false)
-	set_collision_mask_bit(0,false)
-	can_move = false
-	_velocity = Vector2.ZERO
-	$SpaceshipLook.play("exploded")
-	emit_signal("game_over")
-	self.queue_free()
+#func hit()->void:
+#	set_collision_layer_bit(0,false)
+#	set_collision_mask_bit(0,false)
+#	can_move = false
+#	_velocity = Vector2.ZERO
+#	$SpaceshipLook.play("exploded")
+#	emit_signal("game_over")
+#	self.queue_free()
 
 
 func _physics_process(delta:float)->void:
@@ -59,10 +59,10 @@ func _physics_process(delta:float)->void:
 		_get_input()
 	var collision := move_and_collide(_velocity*delta)
 	if collision:
-		print(collision.collider)
 		for i in ENEMY_BITS:
 			if collision.collider.get_collision_layer_bit(1):
-				self.hit()
+				#self.hit()
+				print('hit')
 
 func _on_CannonCoolDown_timeout()->void:
 	is_fatigued = false

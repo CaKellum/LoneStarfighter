@@ -7,7 +7,7 @@ var rng := RandomNumberGenerator.new()
 var is_on_path := false
 var is_in_area := false
 var can_fire := false
-var can_move := true
+var can_move := false
 var velocity := Vector2.ZERO
 var path_points := []
 
@@ -65,3 +65,7 @@ func _on_FireTimer_timeout():
 	can_fire = true
 	$FireTimer.wait_time = rng.randf_range(5,7)
 	$FireTimer.start()
+
+
+func _on_Game_game_live():
+	can_move = true
