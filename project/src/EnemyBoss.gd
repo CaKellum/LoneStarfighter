@@ -52,7 +52,8 @@ func hit()-> void:
 
 
 func _on_Appearance_animation_finished()->void:
-	self.queue_free()
+	if hit_count > 2:
+		self.queue_free()
 
 
 func _on_EnemyArea_body_entered(body)->void:
