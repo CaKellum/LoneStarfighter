@@ -65,10 +65,3 @@ func _on_FireTimer_timeout():
 	can_fire = true
 	$FireTimer.wait_time = rng.randf_range(5,7)
 	$FireTimer.start()
-
-
-func _on_Area2D_body_entered(body):
-	if body == self:
-		emit_signal("in_stage")
-		is_in_area = true
-		is_on_path = false

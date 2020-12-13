@@ -39,7 +39,7 @@ func _process(delta:float)->void:
 
 
 func hit()-> void:
-	if hit_count>1:
+	if hit_count > 2:
 		can_move = false
 		velocity = Vector2.ZERO
 		set_collision_layer_bit(0,false)
@@ -48,12 +48,12 @@ func hit()-> void:
 		set_collision_mask_bit(3,false)
 		emit_signal("destroyed")
 	else:
-		$Appearance.play("Ship2")
+		#dosomething
+		var i = 0
 
 
 func _on_Appearance_animation_finished()->void:
-	if hit_count >1:
-		self.queue_free()
+	self.queue_free()
 
 
 func _on_EnemyArea_body_entered(body)->void:
