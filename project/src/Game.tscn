@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/PlayerShip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Background-2.jpg" type="Texture" id=2]
@@ -24,6 +24,12 @@ _data = {
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 156.958, -238.23, 0, 0, 0, 0, 376.089, -41.348, -48.0833, -76.3675, 48.0833, 76.3675, 586.998, -12.4099, 0, 0, 0, 0, 354.899, 94.0337, -234.759, -50.9117, 234.759, 50.9117, 368.384, 183.932, 0, 0, 0, 0, 648.567, 132.241, 84.8528, -42.4264, -84.8528, 42.4264, 497.987, 3.38607, -122.488, 5.94603, 122.488, -5.94603, 397.493, 389.227, -41.6222, 79.6769, 41.6222, -79.6769, 530.429, 290.232, 0, 0, 0, 0, 438.055, 156.963, 73.7308, -4.75683, -73.7308, 4.75683, 343.753, 148.81, 55.0398, -99.8615, -55.0398, 99.8615, 175.851, 126.996, 10.7029, -128.434, -10.7029, 128.434, 176.876, 301.546, -13.0813, 111.785, 13.0813, -111.785, 323.843, 379.713, -228.328, 38.0546, 228.328, -38.0546, 407.682, 234.24, 45.1899, 176.003, -45.1899, -176.003, 602.039, 115.627, 0, 0, 0, 0, -9.35133, -20.2637 )
 }
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/fonts/press-start/prstartk.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+font_data = SubResource( 4 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 6 )
@@ -126,7 +132,30 @@ position = Vector2( -873.984, -101.823 )
 [node name="WaveDelay" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+autostart = true
+
+[node name="GameIndicator" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 128.35
+margin_top = 336.083
+margin_right = 366.35
+margin_bottom = 396.083
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "game start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="game_over" from="PlayerShip" to="." method="_on_PlayerShip_game_over"]
 [connection signal="low_enemy_destroyed" from="LowEnemyColection" to="." method="_on_LowEnemyColection_low_enemy_destroyed"]
 [connection signal="med_enemy_destroyed" from="MedEnemyCollection" to="." method="_on_MedEnemyCollection_med_enemy_destroyed"]
 [connection signal="hard_enemy_destroyed" from="HardEnemyCollection" to="." method="_on_HardEnemyCollection_hard_enemy_destroyed"]
+[connection signal="timeout" from="WaveDelay" to="." method="_on_WaveDelay_timeout"]
+[connection signal="timeout" from="WaveDelay" to="LowEnemyColection" method="_on_WaveDelay_timeout"]
+[connection signal="timeout" from="WaveDelay" to="MedEnemyCollection" method="_on_WaveDelay_timeout"]
+[connection signal="timeout" from="WaveDelay" to="HardEnemyCollection" method="_on_WaveDelay_timeout"]
