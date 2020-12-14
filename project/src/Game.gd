@@ -26,7 +26,7 @@ func _process(_delta:float)->void:
 
 
 func boss_level()->void:
-	var boss:= enemy_boss.instance()
+	var boss := enemy_boss.instance()
 	var _value := boss.connect("destroyed", self,"_on_EnemyBoss_destoryed" )
 	boss.position = Vector2(240,-10)
 	boss.scale = Vector2(0.75,0.75)
@@ -59,16 +59,16 @@ func _on_WaveDelay_timeout()->void:
 	is_game_live = true
 
 
-func _on_AudioStreamPlayer2D_finished():
+func _on_AudioStreamPlayer2D_finished()->void:
 	$AudioStreamPlayer2D.play()
 
 
-func _on_EnemyBoss_destroyed():
+func _on_EnemyBoss_destroyed()->void:
 	$AudioStreamPlayer2.play()
 	emit_signal("game_win")
 
 
-func _on_GameScreen_start_game():
+func _on_GameScreen_start_game()->void:
 	$GameIndicator.show()
 	$AudioStreamPlayer2D.play()
 	$WaveDelay.start()

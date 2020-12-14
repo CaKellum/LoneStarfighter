@@ -69,5 +69,5 @@ func _on_CannonCoolDown_timeout()->void:
 	is_fatigued = false
 
 
-func _on_AudioStreamPlayer2D_finished():
+func _on_AudioStreamPlayer2D_finished()->void:
 		self.queue_free()

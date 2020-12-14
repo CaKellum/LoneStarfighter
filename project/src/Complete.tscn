@@ -26,6 +26,6 @@ margin_bottom = 720.0
 visible = false
 [connection signal="game_loose" from="Game" to="." method="_on_Game_game_loose"]
 [connection signal="game_win" from="Game" to="." method="_on_Game_game_win"]
-[connection signal="start_game" from="GameScreen" to="Game" method="_on_GameScreen_start_game"]
 [connection signal="start_game" from="GameScreen" to="." method="_on_GameScreen_start_game"]
+[connection signal="start_game" from="GameScreen" to="Game" method="_on_GameScreen_start_game"]
 [connection signal="replay" from="EndScreen" to="." method="_on_EndScreen_replay"]

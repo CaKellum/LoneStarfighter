@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 signal destroyed
 
-
 var can_fire := false
 var can_move := false
 var hit_count := 0
@@ -32,11 +31,11 @@ func hit()-> void:
 		$Appearance.play("ship3")
 
 
-func _on_FireTimer_timeout():
+func _on_FireTimer_timeout()->void:
 	can_fire = true
 	$FireTimer.wait_time = 1.5
 	$FireTimer.start()
 
 
-func _on_AudioStreamPlayer2D_finished():
+func _on_AudioStreamPlayer2D_finished()->void:
 	self.queue_free()

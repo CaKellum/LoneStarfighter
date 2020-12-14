@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 signal destroyed
 
-
 var rng := RandomNumberGenerator.new()
 var is_on_path := false
 var is_in_area := false
@@ -55,15 +54,15 @@ func hit()-> void:
 		hit_count+=1
 
 
-func _on_FireTimer_timeout():
+func _on_FireTimer_timeout()->void:
 	can_fire = true
 	$FireTimer.wait_time = rng.randf_range(1,3)
 	$FireTimer.start()
 
 
-func _on_Game_game_live():
+func _on_Game_game_live()->void:
 	can_move = true
 
 
-func _on_AudioStreamPlayer2D_finished():
+func _on_AudioStreamPlayer2D_finished()->void:
 	self.queue_free()

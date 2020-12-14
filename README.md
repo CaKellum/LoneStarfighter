@@ -6,7 +6,7 @@ W, Up arrow key, or space to fire<br>
 enemies will regenerate after being eliminated<br>
 
 play it [here](https://bsu-cs315.github.io/FP-LoneStarfighter/) <br>
-or [here](https://baking-bard.itch.io/lone-starfighter)
+or [here](https://baking-bard.itch.io/lone-starfighter) on itch.io
 ## Self Reflection
 ### Project Report
 I use the second collision bit layers for the missiles so they don't collide with the player's ship, but the they do with the enemy. The enemies use the first two collision bits to allow collision with the player and missiles from the player. This means that I will either have to rig away programmatically differentiate the enemy missile's collision bits or just create a different system for the enemies.
@@ -14,7 +14,7 @@ I use the second collision bit layers for the missiles so they don't collide wit
 Juice review:
   - The enemies and the character both make noise when they are hit with missiles or make other impacts, players missiles make noise when fired.
 <br>
-In this iteration It I built most of the game, partially because I didn't do anything for the previous iteration, also because I made the most real decisions in terms of game play and how things were going to work. I also Fell in to the trap of on thing being done one way make its easier to keep doing that way rather than a better way discovered later in building
+In this iteration It I built most of the game, partially because I didn't do anything for the previous iteration, also because I made the most real decisions in terms of game play and how things were going to work. I also Fell in to the trap of on thing being done one way make its easier to keep doing that way rather than a better way discovered later in building. I feel like it these past few weeks have been more hectic than they needed to be, with personal, school, and work obligations piling on to one another it felt hard to move. This project at least gave me something to do where I felt productive in it because even if I failed or broke something I learned something. It also helps that the learning was done with a tangible object not such abstract ideas that are normal the subject of classes. I believe that while it may not be perfect, and I wont be a successful game designer anytime soon, I have found a way to relive frustration and stress in a creative way. Struggles I had with this greater iteration were with enemy management, where I would occasionally, change something then suddenly there was an errant signal being sent to the wrong thing. I think this is just an issue I have typically. My mind jumps to the next thing before finishing the last thing. Barring those types of simple and most of the time preventable mistakes I think that making this went fairly smoothly.
 ### Evaluation
 - [x] D-1: The repository link is submitted to Canvas before the project deadline.
 - [x] D-2: The repository contains a README.md file in its top-level directory.
@@ -32,7 +32,7 @@ In this iteration It I built most of the game, partially because I didn't do any
 - [x] B-5: Clear progress has been made on the game with respect to the project plan.
 - [x] A-1: The source code contains no warnings: all warnings are properly addressed, not just ignored.
 - [x] A-2: The game includes the conventional player experience loop of title, gameplay, and ending.
-- [] A-3: Earn N*⌈P/2⌉ stars, where N is the iteration number and P is the number of people on the team.
+- [x] A-3: Earn N*⌈P/2⌉ stars, where N is the iteration number and P is the number of people on the team.
 
 - <!--:star:!--> Include a dynamic (non-static) camera
 - <!--:star:!--> Incorporate parallax background scrolling
