@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/WaterSplash.wav-911dfc0691a71139aaf6f93d3b6a9b33.sample"
 
 [deps]
 
 source_file="res://assets/sound/WaterSplash.wav"
+dest_files=[ "res://.import/WaterSplash.wav-911dfc0691a71139aaf6f93d3b6a9b33.sample" ]
+
 [params]
 
 force/8_bit=false

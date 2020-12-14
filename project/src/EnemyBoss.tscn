@@ -1,8 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/M484ExplosionSet1.png" type="Texture" id=1]
 [ext_resource path="res://assets/ospaceship-main.png" type="Texture" id=2]
 [ext_resource path="res://src/EnemyBoss.gd" type="Script" id=3]
+[ext_resource path="res://assets/ospaceship-main3.png" type="Texture" id=4]
+[ext_resource path="res://assets/ospaceship-main2.png" type="Texture" id=5]
+[ext_resource path="res://src/Appearance.gd" type="Script" id=6]
+[ext_resource path="res://assets/sound/Explosion5.wav" type="AudioStream" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -51,6 +55,16 @@ animations = [ {
 "name": "explode",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "ship3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "ship2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "ship",
@@ -59,16 +73,17 @@ animations = [ {
 
 [node name="EnemyBoss" type="KinematicBody2D"]
 rotation = 4.71239
-collision_layer = 16
-collision_mask = 16
+collision_layer = 8
+collision_mask = 8
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Apearance" type="AnimatedSprite" parent="."]
+[node name="Appearance" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
 animation = "ship"
+script = ExtResource( 6 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -314.329, -46.1555, -162.839, -61.7557, -125.542, -82.1149, -82.8402, -99.3454, -1.93158, -123.318, 46.7634, -126.315, 62.7761, -139.206, 68.4889, -150.288, 63.8985, -176.247, 0.315887, -190.742, -83.144, -182.982, -104.471, -212.166, -27.0209, -235.737, 77.368, -240.227, 189.614, -216.655, 304.105, -162.777, 326.947, -140.549, 285.743, -131.559, 257.276, -104.59, 240.045, -73.8742, 150.328, -144.818, 92.4618, -130.061, 83.4719, -101.593, 111.94, -59.6403, 126.923, -11.6945, 126.923, 10.031, 102.201, 76.7057, 86.3477, 99.8788, 86.4685, 122.404, 120.18, 139.635, 153.892, 140.384, 189.103, 119.407, 238.547, 72.2108, 238.547, 72.2108, 261.021, 107.421, 276.754, 122.404, 297.371, 130.185, 334.412, 139.165, 145.838, 232.329, -42.7354, 231.207, -96.6136, 217.737, -91.0013, 185.186, 17.5464, 189.828, 63.2448, 178.591, 72.2346, 165.106, 67.2659, 141.41, 41.4493, 123.451, -11.6706, 123.902, -46.1684, 114.295, -70.8537, 102.177, -118.8, 84.1972, -160.003, 60.9734, -313.579, 45.2412, -310.583, 29.509, -121.796, 22.7666, -121.308, -21.3471, -312.83, -28.1758 )
@@ -81,4 +96,7 @@ position = Vector2( -315, -40 )
 [node name="RightMuzzle" type="Position2D" parent="."]
 position = Vector2( -315, 40 )
 
-[node name="UltimateTimer" type="Timer" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+[connection signal="destroyed" from="." to="Appearance" method="_on_Enemy_destroyed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]

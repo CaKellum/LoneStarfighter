@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-signal game_over
+signal game_over(amt_fired)
 
 const MISSILE := preload("res://src/PlayerMissile.tscn")
 const HEALTHMANAGER := preload("res://src/PlayerHealth.gd")
@@ -37,6 +37,7 @@ func _get_input()->void:
 func _fire_missle()->void:
 	var shot := MISSILE.instance()
 	get_parent().add_child(shot)
+	$AudioStreamPlayer2D.play()
 	amt_fired_missiles +=1
 	if amt_fired_missiles%2 == 0:
 		shot.fired($RightMuzzle.global_position,-10)
@@ -44,14 +45,14 @@ func _fire_missle()->void:
 		shot.fired($LeftMuzzle.global_position,-10)
 
 
-#func hit()->void:
-#	set_collision_layer_bit(0,false)
-#	set_collision_mask_bit(0,false)
-#	can_move = false
-#	_velocity = Vector2.ZERO
-#	$SpaceshipLook.play("exploded")
-#	emit_signal("game_over")
-#	self.queue_free()
+func hit()->void:
+	set_collision_layer_bit(0,false)
+	set_collision_mask_bit(0,false)
+	can_move = false
+	_velocity = Vector2.ZERO
+	$SpaceshipLook.play("exploded")
+	emit_signal("game_over",amt_fired_missiles)
+	$AudioStreamPlayer.play()
 
 
 func _physics_process(delta:float)->void:
@@ -61,8 +62,12 @@ func _physics_process(delta:float)->void:
 	if collision:
 		for i in ENEMY_BITS:
 			if collision.collider.get_collision_layer_bit(1):
-				#self.hit()
-				print('hit')
+				self.hit()
+
 
 func _on_CannonCoolDown_timeout()->void:
 	is_fatigued = false
+
+
+func _on_AudioStreamPlayer2D_finished():
+		self.queue_free()

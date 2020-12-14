@@ -10,7 +10,10 @@ play it [here](https://bsu-cs315.github.io/FP-LoneStarfighter/) <br>
 ### Project Report
 I use the second collision bit layers for the missiles so they don't collide with the player's ship, but the they do with the enemy. The enemies use the first two collision bits to allow collision with the player and missiles from the player. This means that I will either have to rig away programmatically differentiate the enemy missile's collision bits or just create a different system for the enemies.
 <br>
-This iteration has been a bit of a struggle for me mostly due to personal life upsets and family being family. I had to move in to an apartment and announce a Baby Shower for my Fiancé so my family knew about it. All of that time constraint put on with Walmart demanding overtime in the wake of this month long Black Friday have really messed with my usual schedule. In the iteration I had the goal of doing the intricate enemy movement patterns which I knew it would be a challenge and given my time constraint of the family calling and unpacking and setting up utilities I didn't complete that one. Though I do Know now how to do it know through about an hour of thinking and reading, I don't believe I would have time to make it production ready, so I will leave it unfinished. Over all I also think that a more appropriate job of slicing the game in the beginning would have also have assisted in the ease of moving forward. But there is a positive to this whole thing I think while doing this is was the least stressed worried and most calm I have been in about a week. So in my general tone I think this is a great way for a weary and tired college student to reinvigorate their joy in programing and have a bit of fun. I think that all of the faults in my process could have been avoided with a little bit more perseverance and forethought but hindsight is nothing but 2020.
+Juice review:
+  - The enemies and the character both make noise when they are hit with missiles or make other impacts, players missiles make noise when fired.
+<br>
+
 ### Evaluation
 - [x] D-1: The repository link is submitted to Canvas before the project deadline.
 - [x] D-2: The repository contains a README.md file in its top-level directory.
@@ -28,7 +31,7 @@ This iteration has been a bit of a struggle for me mostly due to personal life u
 - [x] B-5: Clear progress has been made on the game with respect to the project plan.
 - [x] A-1: The source code contains no warnings: all warnings are properly addressed, not just ignored.
 - [] A-2: The game includes the conventional player experience loop of title, gameplay, and ending.
-- [x] A-3: Earn N*⌈P/2⌉ stars, where N is the iteration number and P is the number of people on the team.
+- [] A-3: Earn N*⌈P/2⌉ stars, where N is the iteration number and P is the number of people on the team.
 
 - <!--:star:!--> Include a dynamic (non-static) camera
 - <!--:star:!--> Incorporate parallax background scrolling
@@ -36,7 +39,7 @@ This iteration has been a bit of a struggle for me mostly due to personal life u
 - <!--:star:!--> Incorporate smooth transitions between title, game, and end states, rather than jumping between states via change_scene
 - <!--:star:!--> Support both touch and mouse/keyboard input in the Web build
 - <!--:star:!--> Allow the user to control the volume of music and sound effects independently.
-- <!--:star:!--> Incorporate juiciness and document it in the README.md
+- :star: Incorporate juiciness and document it in the README.md
 - <!--:star:!--> Incorporate another kind of juiciness and document it in the README.md
 - <!--:star:!--> Use particle effects
 - :star: Use different layers and masks to manage collisions and document this in the README.md

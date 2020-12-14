@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/Explosion5.wav-7b6c1b76906aae380f8fdcda7bc050b1.sample"
 
 [deps]
 
 source_file="res://assets/sound/Explosion5.wav"
+dest_files=[ "res://.import/Explosion5.wav-7b6c1b76906aae380f8fdcda7bc050b1.sample" ]
+
 [params]
 
 force/8_bit=false

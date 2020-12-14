@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 signal destroyed
-signal in_stage
+
 
 var rng := RandomNumberGenerator.new()
 var is_on_path := false
@@ -33,8 +33,10 @@ func _process(delta:float)->void:
 	else:
 		position = enemy_move.error_oscillation(position)
 	if can_fire and can_move:
-		enemy_move.fire(get_parent().get_parent(), $RightMuzzle.global_position)
-		enemy_move.fire(get_parent().get_parent(), $LeftMuzzle.global_position)
+		enemy_move.fire(get_parent().get_parent(), 
+		$RightMuzzle.global_position)
+		enemy_move.fire(get_parent().get_parent(), 
+		$LeftMuzzle.global_position)
 		can_fire = false
 
 
@@ -46,27 +48,11 @@ func hit()-> void:
 		set_collision_layer_bit(3,false)
 		set_collision_mask_bit(0,false)
 		set_collision_mask_bit(3,false)
+		$AudioStreamPlayer2D.play()
 		emit_signal("destroyed")
 	else:
 		$Appearance.play("Ship2")
 		hit_count+=1
-
-
-func _on_Appearance_animation_finished()->void:
-	if hit_count >1:
-		self.queue_free()
-
-
-func _on_EnemyArea_body_entered(body)->void:
-	if body == self:
-		is_in_area = true
-		is_on_path = false
-		emit_signal("in_stage")
-
-
-func _on_HoverTimer_timeout():
-	is_in_area = false
-	is_on_path = true
 
 
 func _on_FireTimer_timeout():
@@ -77,3 +63,7 @@ func _on_FireTimer_timeout():
 
 func _on_Game_game_live():
 	can_move = true
+
+
+func _on_AudioStreamPlayer2D_finished():
+	self.queue_free()

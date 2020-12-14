@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/VictoryBig.wav-58ac360fd8cb0455d501ac93d89b0bad.sample"
 
 [deps]
 
 source_file="res://assets/sound/VictoryBig.wav"
+dest_files=[ "res://.import/VictoryBig.wav-58ac360fd8cb0455d501ac93d89b0bad.sample" ]
+
 [params]
 
 force/8_bit=false

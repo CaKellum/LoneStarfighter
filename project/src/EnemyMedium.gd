@@ -42,11 +42,8 @@ func hit()-> void:
 	set_collision_layer_bit(2,false)
 	set_collision_mask_bit(0,false)
 	set_collision_mask_bit(2,false)
+	$AudioStreamPlayer2D.play()
 	emit_signal("destroyed")
-
-
-func _on_Appearance_animation_finished()->void:
-	self.queue_free()
 
 
 func _on_EnemyArea_body_entered(body)->void:
@@ -69,3 +66,7 @@ func _on_FireTimer_timeout()->void:
 
 func _on_Game_game_live():
 	can_move= true
+
+
+func _on_AudioStreamPlayer2D_finished():
+	self.queue_free()
