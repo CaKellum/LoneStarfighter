@@ -53,10 +53,10 @@ In this iteration It I built most of the game, partially because I didn't do any
 - :star: The game is released publicly on itch.io, with all the recommended accompanying text, screenshots, gameplay videos, etc.
 
 ## Third Party Assets
--enemy ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [OGA-BY 3.0](https://static.opengameart.org/OGA-BY-3.0.txt)
--player ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
--backgrounds are by [Rawdanitsu](https://opengameart.org/users/rawdanitsu) licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
--Boss Ship is ["Yellow Starship"](https://opengameart.org/content/yellow-starship) by [MillionthVector](http://millionthvector.blogspot.de) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
--Explosions are[ "Explosion Set 1 (M484 Games)"](https://opengameart.org/content/explosion-set-1-m484-games) by [Master484]( http://m484games.ucoz.com/) licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
--Font is ["Press Start"](https://www.1001fonts.com/press-start-font.html) by [codeman38](cody@zone38.net) [website](http://www.zone38.net/) licensed under a derivative of the original [Bitstream Vera -copyright](https://www.gnome.org/fonts/#copyright), explained further in ```res://assets/fonts/press-start/license.txt```
--Sound effects from ["8-bit sound FX"](https://opengameart.org/content/8-bit-sound-fx) by [Dizzy Crow](https://opengameart.org/users/dizzy-crow) licensed under a [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- enemy ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [OGA-BY 3.0](https://static.opengameart.org/OGA-BY-3.0.txt)
+- player ship sprites done by [clayster2012](https://opengameart.org/users/clayster2012) licensed under [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/)
+- backgrounds are by [Rawdanitsu](https://opengameart.org/users/rawdanitsu) licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- Boss Ship is ["Yellow Starship"](https://opengameart.org/content/yellow-starship) by [MillionthVector](http://millionthvector.blogspot.de) licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- Explosions are[ "Explosion Set 1 (M484 Games)"](https://opengameart.org/content/explosion-set-1-m484-games) by [Master484]( http://m484games.ucoz.com/) licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+- Font is ["Press Start"](https://www.1001fonts.com/press-start-font.html) by [codeman38](cody@zone38.net) [website](http://www.zone38.net/) licensed under a derivative of the original [Bitstream Vera -copyright](https://www.gnome.org/fonts/#copyright), explained further in ```res://assets/fonts/press-start/license.txt```
+- Sound effects from ["8-bit sound FX"](https://opengameart.org/content/8-bit-sound-fx) by [Dizzy Crow](https://opengameart.org/users/dizzy-crow) licensed under a [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
